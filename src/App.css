@@ -1,0 +1,10 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+my_row{
+  max-width: 95%;
+  margin: 0 auto;
+}

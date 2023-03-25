@@ -1,0 +1,14 @@
+.category-container{
+  height: 70vh;
+  width: 100%;
+  border: 2px solid red;
+  background: #197DDA;
+  /* display: flex; */
+}
+
+.category-content{
+  border: 2px solid red;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 3rem 0;
+}
