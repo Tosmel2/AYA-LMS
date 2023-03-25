@@ -12,8 +12,9 @@ function App() {
     <ChakraProvider theme={theme}>
       <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={< AdminLogin/>} />
+        <Route exact path="/" element={< Homepage/>} />
         <Route  path="/course" element={<CoursePostingForm />} />
+        <Route path='/adminLog' element={<AdminLogin/>}/>
       </Routes>
       </BrowserRouter>
       
