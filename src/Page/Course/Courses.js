@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../../components/Homepage/Navbar";
-import Footer from "../../components/Footer";
-
+import Footer from "../../molecules/Footer";
 import {
   Box,
   Heading,
@@ -18,6 +17,7 @@ import {
   Flex,
   Center,
 } from "@chakra-ui/react";
+
 
 const CoursePostingForm = () => {
   const [title, setTitle] = useState("");
