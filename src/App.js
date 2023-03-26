@@ -5,6 +5,7 @@ import Homepage from './components/Homepage';
 import {  BrowserRouter, BrowserRouter as Router,
    Route,  Routes, useRoutes } from 'react-router-dom';
 import CoursePostingForm from './Page/Course/Courses';
+import AdminLogin from './Page/admin/adminLog';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={< Homepage/>} />
         <Route  path="/course" element={<CoursePostingForm />} />
+        <Route path='/adminLog' element={<AdminLogin/>}/>
       </Routes>
       </BrowserRouter>
       

@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import footer_logo from '../assets/footer_logo.png';
 import {
   Box,
