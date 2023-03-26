@@ -1,14 +1,84 @@
 .category-container{
-  height: 70vh;
+  height: 90vh;
   width: 100%;
-  border: 2px solid red;
   background: #197DDA;
   /* display: flex; */
 }
 
 .category-content{
-  border: 2px solid red;
   max-width: 90%;
   margin: 0 auto;
   padding: 3rem 0;
+
+}
+
+.category-content h1{
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.courses-category{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.courses-category .web3{
+  width: 32%;
+  height: 15vh;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.3rem;
+  /* border: 2px solid red; */
+
+}
+.web3 .category-text{
+  width: 52%;
+}
+.web3 .category-text h2{
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.web3 .category-text p{
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.web3 .web3__img-box{
+  height: 100%;
+  width: 45%;
+}
+
+@media screen  and (max-width: 900px){
+  .category-container{
+    height: 100%;
+    width: 100%;
+  }
+  .courses-category{
+    flex-direction: column;
+  }
+  .courses-category .web3{
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    /* height: 100%; */
+  }
+  .web3 .category-text{
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .category-content{
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 1rem 0;
+  
+  }
+  
+  .category-content h1{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 0.7rem;
+  }
 }
