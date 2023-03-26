@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: red;
+    width: 100%;
+}
+.main-wrap{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+.left{
+    background-color: #197DDA;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+}
+.lhldr{
+    /* background-color: red; */
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+}
+.imgwrp{
+   background-color: white;
+   height: 50%;
+   width: 10%;
+   border-radius: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.imgwrp img{
+   width: 55%;
+}
+.intro{
+    /* background-color: rgb(16, 228, 97); */
+    width: 100%;
+    height: 30%;
+    padding-left: 50px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+.big{
+    /* background-color: rgb(229, 255, 0); */
+    width: 55%;
+    height: 65%;
+    font-size: 45px;
+    font-weight: 630;
+    line-height: 60px;
+}
+.small{
+    /* background-color: red; */
+    width: 85%;
+    font-size: 23px;
+    font-weight: 450;
+}
+.right{
+    background-color: white;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logbox{
+    /* background-color: grey; */
+    width: 90%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.loghead{
+    width: 100%;
+    /* background-color: red; */
+    height: 20%;
+}
+.loghead p{
+    font-size: 40px;
+    font-weight: 600;
+}
+.logtwo{
+    font-size: 15px !important;
+    font-weight: 400 !important;
+}
+form{
+    /* background-color: whitesmoke; */
+    width: 100%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+}
+label{
+    font-weight: 500;
+}
+input{
+    border: 1px solid grey;
+    outline: none;
+    padding: 13px;
+    color: black !important;
+    font-weight: 500;
+    border-radius: 5px;
+    font-size: 15px;
+}
+input::placeholder{
+    color: rgb(78, 78, 78);
+    font-size: 14px;
+    font-weight: 500;
+}
+#pass{
+    margin-top: 10px;
+}
+form > a{
+    color:#197DDA;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: end;
+    margin-top: 10px;
+}
+form > button{
+    background-color: #197DDA;
+    width: 100%;
+    height: 16%;
+    color: white;
+    font-weight: 550;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.signup{
+    display: flex;
+    gap: 3px;
+    /* background-color: springgreen; */
+    width: 100%;
+    justify-content: center;
+}
+.signup span{
+    color: #197DDA;
+    font-weight: 700;
+}
