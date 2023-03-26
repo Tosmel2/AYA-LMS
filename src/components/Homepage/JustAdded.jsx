@@ -2,7 +2,7 @@
 // import CourseCards from '../CourseCards'
 // import herobg from '../../assets/herobg.png';
 // import { Box } from '@chakra-ui/react';
-// import { Flex, Text, Image } from '@chakra-ui/react' 
+// import { Flex, Text, Image } from '@chakra-ui/react'
 
 // const JustAdded = (props) => {
 //   return (
@@ -16,12 +16,11 @@
 //         >
 //         <Image src={herobg} alt="thumbnail" objectFit="contain" w={'100%'} h={'100%'}/>
 //       </Box>
-      
+
 //       <Box bg={'#ffffff'} p={2} w={'60%'} h={'100%'}>
 //         <Text as='b' fontSize={['lg', 'xl']}>Build a Dapp</Text>
 //         <Text fontSize={['sm', 'md']}>Learn how to build a dapp with solidity and react</Text>
 //       </Box>
-
 
 //     <Box>
 //     <CourseCards
@@ -44,13 +43,12 @@
 //     </Box>
 
 //     </Flex>
-      
+
 //     </>
 //   )
 // }
 
 // export default JustAdded
-
 
 // import React, { useState } from 'react'
 // // import CourseCards from '../CourseCards'
@@ -127,7 +125,6 @@
 
 // export default JustAdded
 
-
 // const CourseCards = (props) => {
 //   return (
 //     <Flex
@@ -144,7 +141,7 @@
 //       >
 //         <Image src={props.img} alt="thumbnail" objectFit="contain" w={'100%'} h={'100%'}/>
 //       </Box>
-      
+
 //       <Box bg={'#ffffff'} p={2} w={'60%'} h={'100%'}>
 //         <Text as='b' fontSize={['lg', 'xl']}>{props.title}</Text>
 //         <Text fontSize={['sm', 'md']}>{props.description}</Text>
@@ -153,38 +150,38 @@
 //   )
 // }
 
-import React, { useState } from 'react';
-import CourseCards from '../CourseCards';
-import herobg from '../../assets/herobg.png';
-import { Box } from '@chakra-ui/react';
-import { Flex, Text,  Button } from '@chakra-ui/react';
+import React, { useState } from "react";
+import CourseCards from "../CourseCards";
+import herobg from "../../assets/herobg.png";
+import { Box } from "@chakra-ui/react";
+import { Flex, Text, Button } from "@chakra-ui/react";
 
 const courseData = {
   courses: [
     {
       img: herobg,
-      title: 'Getting Started with Web3 Development',
-      description: 'Learn how to build a dapp with solidity and react',
+      title: "Getting Started with Web3 Development",
+      description: "Learn how to build a dapp with solidity and react",
     },
     {
       img: herobg,
-      title: 'Getting Started with Web3 Development',
-      description: 'Learn how to build a dapp with solidity and react',
+      title: "Getting Started with Web3 Development",
+      description: "Learn how to build a dapp with solidity and react",
     },
     {
       img: herobg,
-      title: 'Getting Started with Web3 Development',
-      description: 'Learn how to build a dapp with solidity and react',
+      title: "Getting Started with Web3 Development",
+      description: "Learn how to build a dapp with solidity and react",
     },
     {
       img: herobg,
-      title: 'Getting Started with Web3 Development',
-      description: 'Learn how to build a dapp with solidity and react',
+      title: "Getting Started with Web3 Development",
+      description: "Learn how to build a dapp with solidity and react",
     },
     {
       img: herobg,
-      title: 'Build a Dapp',
-      description: 'Learn how to build a dapp with solidity and react',
+      title: "Build a Dapp",
+      description: "Learn how to build a dapp with solidity and react",
     },
   ],
 };
@@ -202,48 +199,50 @@ const JustAdded = (props) => {
   const lastIndex = currentPage * coursesPerPage;
 
   // calculate the index of the first course on the current page
-  const firstIndex = lastIndex-coursesPerPage;
+  const firstIndex = lastIndex - coursesPerPage;
 
   // slice the array of courses to display only the courses for the current page
   const coursesToShow = courseData.courses.slice(firstIndex, lastIndex);
-  
+
   // handle pagination
   const paginate = (pageNumber) => {
-  setCurrentPage(pageNumber);
+    setCurrentPage(pageNumber);
   };
-  
+
   return (
-  <Box>
-  <Text fontSize="3xl" fontWeight="bold" mb="4">
-  Just Added
-  </Text>
-  <Flex flexWrap="wrap" justifyContent="center" alignItems={'flex-end'} flexDirection={'column'}>
-  {coursesToShow.map((course, index) => (
-  <CourseCards
-  key={index}
-  img={course.img}
-  title={course.title}
-  description={course.description}
-  active={index === activeIndex}
-  onClick={() => handleCourseCardClick(index)}
-  />
-  ))}
-  </Flex>
-  <Box mt="4">
-  <Button  variant='outline'
-       coursesPerPage={coursesPerPage}
-       totalCourses={courseData.courses.length}
-       paginate={paginate}
-     >Test</Button>
-  </Box>
-  </Box>
+    <Box>
+      <Text fontSize='3xl' fontWeight='bold' mb='4'>
+        Just Added
+      </Text>
+      <Flex
+        flexWrap='wrap'
+        justifyContent='center'
+        alignItems={"flex-end"}
+        flexDirection={"column"}
+      >
+        {coursesToShow.map((course, index) => (
+          <CourseCards
+            key={index}
+            img={course.img}
+            title={course.title}
+            description={course.description}
+            active={index === activeIndex}
+            onClick={() => handleCourseCardClick(index)}
+          />
+        ))}
+      </Flex>
+      <Box mt='4'>
+        <Button
+          variant='outline'
+          coursesperpage={coursesPerPage}
+          totalcourses={courseData.courses.length}
+          paginate={paginate}
+        >
+          Test
+        </Button>
+      </Box>
+    </Box>
   );
-  };
-  
-  export default JustAdded;
-  
-  
-  
-  
-  
-  
+};
+
+export default JustAdded;
