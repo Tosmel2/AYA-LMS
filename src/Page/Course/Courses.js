@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import {
   Box,
   Heading,
@@ -21,10 +22,14 @@ const CoursePostingForm = () => {
   const [author, setAuthor] = useState("");
   const [image, setImage] = useState(null);
   const [promotionalImage, setPromotionalImage] = useState(null);
+  const [date, setDate] = useState("");
   const [category1, setCategory1] = useState("");
   const [category2, setCategory2] = useState("");
   const [category3, setCategory3] = useState("");
   const [language, setLanguage] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
+  const [level, setLevel] = useState("beginner");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -60,7 +65,12 @@ const CoursePostingForm = () => {
           <Flex></Flex>
         </Box>
       </Box>
-
+      <Center>
+        <Heading as='h1' size='xl' mb='6'>
+          Title of Course
+        </Heading>
+      </Center>
+      <Divider borderWidth='1px' marginBottom='19px' />
       <Flex
         width={{ base: "100%", md: "90%" }}
         height={{ base: "50%", md: "200%" }}
@@ -110,13 +120,6 @@ const CoursePostingForm = () => {
           orientation='vertical'
         />
         <Box p='6'>
-          <Center>
-            <Heading as='h1' size='xl' mb='6'>
-              Title of Course
-            </Heading>
-          </Center>
-          <Divider borderWidth='1px' marginBottom='19px' />
-
           <p>
             Your course landing page is the page first seen by a user or an
             intending learner when the click your course. Make sure it is
@@ -198,9 +201,25 @@ const CoursePostingForm = () => {
               <label htmlFor='image-input'>Course Image</label>
               <Input
                 type='file'
+                id='file-input'
                 accept='image/*'
+                display='none'
                 onChange={handleImageUpload}
               />
+              <FormControl>
+                <label htmlFor='file-input'>
+                  <Button
+                    as='span'
+                    width='100%'
+                    colorScheme='blue'
+                    variant='outline'
+                    cursor='pointer'
+                    _hover={{ bg: "blue.500", color: "white" }}
+                  >
+                    Choose Image
+                  </Button>
+                </label>
+              </FormControl>
             </FormControl>
 
             <FormControl>
@@ -208,9 +227,31 @@ const CoursePostingForm = () => {
               <Input
                 type='file'
                 accept='image/*'
+                id='file-input'
+                display='none'
+                onChange={handleImageUpload}
+              />
+              <label htmlFor='file-input'>
+                <Button
+                  as='span'
+                  width='100%'
+                  colorScheme='blue'
+                  variant='outline'
+                  cursor='pointer'
+                  _hover={{ bg: "blue.500", color: "white" }}
+                >
+                  Course Promotional Video
+                </Button>
+              </label>
+            </FormControl>
+            {/* <FormControl>
+              <label htmlFor="image-input">Course Promotional Video</label>
+              <Input
+                type="file"
+                accept="image/*"
                 onChange={handlePromotionalImageUpload}
               />
-            </FormControl>
+            </FormControl> */}
 
             <FormControl mt='20px'>
               <label htmlFor='image-input'>Instructor Profile</label>
@@ -227,7 +268,7 @@ const CoursePostingForm = () => {
               </div>
             </FormControl>
 
-            <Center mt='100px' gap='20px'>
+            <Center mt='100px' mb='50px' gap='20px'>
               <Button
                 w='15%'
                 colorScheme='blue'
