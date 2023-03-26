@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Navbar from "../../components/Homepage/Navbar";
-import Footer from "../../molecules/Footer";
 import {
   Box,
   Heading,
@@ -17,7 +15,6 @@ import {
   Flex,
   Center,
 } from "@chakra-ui/react";
-
 
 const CoursePostingForm = () => {
   const [title, setTitle] = useState("");
@@ -58,7 +55,6 @@ const CoursePostingForm = () => {
 
   return (
     <Box>
-      <Navbar />
       <Box flex='1' bg='blue.100' p='4' alignItems='center'>
         <Box>
           <Flex></Flex>
@@ -250,7 +246,6 @@ const CoursePostingForm = () => {
           </form>
         </Box>
       </Flex>
-      <Footer />
     </Box>
   );
 };
