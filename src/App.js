@@ -14,6 +14,7 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
       <BrowserRouter>
+      <Navbar/>
         <Routes>
           <Route exact path='/' element={<Homepage />} />
           <Route exact path='/course' element={<CoursePostingForm />} />
