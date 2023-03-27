@@ -13,9 +13,7 @@ import Register from "./Page/Register/register";
 function App() {
   return (
     <ChakraProvider theme={theme}>
-
       <BrowserRouter>
-        
         <Routes>
           <Route exact path='/' element={<Homepage />} />
           <Route exact path='/course' element={<CoursePostingForm />} />
