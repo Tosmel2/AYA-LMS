@@ -1,0 +1,50 @@
+.feature{
+  background: rgb(0, 119, 255);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* border: 2px solid red; */
+}
+.mini-feature{
+  /* border: 2px solid green; */
+  width: 90%;
+  height: 100%;
+}
+
+.feature-buttom{
+  /* border: 2px solid blue; */
+  height: 70%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feature-buttom .allboxes{
+  /* background-image: url(../assets/etherum.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  /* border: 2px solid green; */
+  height: 350px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 900px) {
+.mini-feature{
+  width: 90%;
+  height: 95%;
+}
+
+.feature-top p{
+  margin-bottom: 0.5rem;
+}
+}

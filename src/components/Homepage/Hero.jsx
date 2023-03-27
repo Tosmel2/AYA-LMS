@@ -30,8 +30,8 @@ const Hero = ({href}) => {
       px={['4', '16']}
       color={'white'}
       >
-        <Text as='b' fontSize={['4xl', '5xl']} my={0} py={0} spacing={1}>Learn Web3 the</Text>
-        <Text as='b' fontSize={['4xl', '5xl']} mt={0}>right way</Text>
+        <Text as='b' fontSize={['4xl', '5xl']} my={0} py={0} spacing={1} style={{lineHeight:'1.2'}}>Learn Web3 the <br />right way</Text>
+        {/* <Text as='b' fontSize={['4xl', '5xl']} mt={0}>right way</Text> */}
         <Text fontSize='xl'>Get ahead of your peers With curated web3 courses</Text>
         <Button size="md" color={'#197DDA'} w={'40%'} href={'/register'}>Get Started</Button>
       </Stack>
