@@ -59,7 +59,7 @@ const CoursePostingForm = () => {
   }
 
   return (
-    <Box>
+    <Box mt="90px">
       <Box flex='1' bg='blue.100' p='4' alignItems='center'>
         <Box>
           <Flex></Flex>
