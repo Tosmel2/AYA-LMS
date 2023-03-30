@@ -6,8 +6,18 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CoursePostingForm from "./Page/Course/Courses";
 import Profile from "./components/Profile/Profile";
 import AdminLogin from "./Page/admin/adminLog";
-import Register from "./Page/Register/register";
+// import Register from "./Page/Register/register";
+import Login from "./components/Login";
+import Register from "./components/Register";
 import Wrapper from "./molecules/container/Wrapper";
+import LandingPage from "./components/LandingPage";
+import InstructorRegister from "./components/Instructor/InstructorRegister";
+import InstructorLogin from "./components/Instructor/InstructorLogin";
+import InstructorDashboard from "./components/Instructor/InstructorDashboard";
+import ResetPassword from "./components/ChangePassword/ResetPassword";
+import ForgetPassword from "./components/ChangePassword/ForgotPassword";
+import MetamaskReg from "./components/MetamaskReg";
+
 
 function App() {
   return (
@@ -18,9 +28,9 @@ function App() {
             exact
             path='/'
             element={
-              <Wrapper>
-                <Homepage />
-              </Wrapper>
+              // <Wrapper>
+                <LandingPage />
+              // </Wrapper>
             }
           />
           <Route
@@ -32,10 +42,19 @@ function App() {
               </Wrapper>
             }
           />
+          {/* <Route path='/' element={<LandingPage />} /> */}
           <Route exact path='/profile' element={<Profile />} />
+          <Route exact path='/instructor/register' element={<InstructorRegister />} />
+          <Route exact path='/instructor/login' element={<InstructorLogin />} />
+          <Route exact path='/instructor/dashboard' element={<InstructorDashboard />} />
+          <Route exact path='/forgot-password' element={<ForgetPassword />} />
+          <Route exact path='/reset-password' element={<ResetPassword />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/meta' element={<MetamaskReg />} />
           <Route path='/adminLog' element={<AdminLogin />} />
-          <Route path='*' element={<h2>404, page not found</h2>} />
+          <Route path='/home' element={<Homepage />} />
+          <Route path='*' element={<h2 style={{fontSize:'2rem', textAlign:'center'}}>404, page not found</h2>} />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>
