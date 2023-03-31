@@ -5,6 +5,7 @@ import "../App.css";
 import Feature from "./Homepage/Feature";
 import JustAdded from "./Homepage/JustAdded";
 import LandingNavbar from "../components/LandingNavbar";
+import Footer from '../molecules/Footer';
 
 const LandingPage = () => {
   return (
@@ -14,6 +15,7 @@ const LandingPage = () => {
       <Feature />
       <JustAdded />
       <Category />
+      <Footer />
     </div>
   )
 }

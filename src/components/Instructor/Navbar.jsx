@@ -23,7 +23,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   return (
     <div
-      className='w-full fixed top-0 z-20 bg-white min-h-[2rem] flex flex-col lg:flex-row justify-between px-4 py-4 gap-x-20 ease-in duration-500 border'
+      className='w-full z-20 bg-white min-h-[2rem] flex flex-col lg:flex-row justify-between px-4 py-4 gap-x-20 ease-in duration-500 border'
       id='navbar'
     >
       <img
