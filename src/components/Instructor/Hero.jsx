@@ -14,7 +14,7 @@ const Hero = ({href}) => {
   return (
     <>
     <Flex
-    h={['100%', '100vh']}
+    h={['100%']}
     >
     <Box
     bg={useColorModeValue('#197DDA', '#197DDA')}

@@ -117,7 +117,7 @@ const Navbar = () => {
             fontWeight={500}
             color={'white'}
             bg={useColorModeValue('#197DDA', '#FAD744')}
-            href={'/register'}
+            href={'/course'}
             _hover={{
               bg: 'blue.400',
             }}>
