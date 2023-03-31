@@ -23,8 +23,9 @@ import lms_logo from '../../assets/lms_logo.png';
 const Login = () => {
   const [status, setStatus] = useState(true)
   const [user, setUser] = useState({
-      email: "",
-      password: ""
+      // email: "",
+      password: "",
+      companyId: ""
   })
 
   const [type , setType] = useState({visible: false, input:"password"});
@@ -39,6 +40,7 @@ const Login = () => {
   }
   const navigate = useNavigate()
   const url = `http://localhost:5000/api/v1/user/instructor/login`
+
 
   const handleSubmit = (e) => {
     e.preventDefault();

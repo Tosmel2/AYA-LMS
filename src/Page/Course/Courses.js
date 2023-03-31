@@ -15,13 +15,19 @@ import {
   Stack,
   Flex,
   Center,
+  Textarea,
 } from "@chakra-ui/react";
+// import { NavLink } from "react-router-dom"
+import axios from "axios";
+import Swal from "sweetalert2";
+import {useNavigate} from "react-router"
 
 const CoursePostingForm = () => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
-  const [image, setImage] = useState(null);
-  const [promotionalImage, setPromotionalImage] = useState(null);
+  const [status, setStatus] = useState(true)
+  // const [image, setImage] = useState(null);
+  const [courseThumbnailImage, setcourseThumbnailImage] = useState(null);
   const [date, setDate] = useState("");
   const [category1, setCategory1] = useState("");
   const [category2, setCategory2] = useState("");
@@ -31,10 +37,85 @@ const CoursePostingForm = () => {
   const [price, setPrice] = useState("");
   const [level, setLevel] = useState("beginner");
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // handle form submission here
-  };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   // create an object with the data of the course
+  //   const courseData = {
+  //     title: title,
+  //     author: author,
+  //     image: image,
+  //     promotionalImage: promotionalImage,
+  //     date: date,
+  //     category1: category1,
+  //     category2: category2,
+  //     category3: category3,
+  //     language: language,
+  //     description: description,
+  //     price: price,
+  //     level: level,
+  //   };
+  //   // make a POST request to the API to add the course
+  //   axios
+  //     .post("/api/add-course", courseData)
+  //     .then((response) => {
+  //       console.log(response.data);
+  //       // handle the successful response here
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //       // handle the error here
+  //     });
+  // };
+
+  const navigate = useNavigate()
+
+  const url = `http://localhost:5000/api/v1/courses`
+  // const url = `https://aya-project-prod.vercel.app/api/v1/users/register`
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStatus(false)
+
+    const courseData = {
+      title: title,
+      instructor: 'tosmel',
+      courseThumbnailImage: courseThumbnailImage,
+      category1: category1,
+      category2: category2,
+      category3: category3,
+      language: language,
+      description: description,
+      price: price,
+      level: level,
+    };
+
+    axios.post(url, courseData)
+    .then((res) => {
+        if(res.data.status === "error"){
+            setStatus(true)
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: res.data.message
+            });
+        }else{
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: "New Courses uploaded Successful",
+                showConfirmButton: false,
+                timer: 1500
+            });
+              setTimeout(() => {
+                  navigate("/instructor/dashboard");
+              }, 1500)
+        }
+    }).catch(error => {
+        console.log(error.message) 
+        setStatus(true)
+    })
+}
+
 
   function handleImageUpload(event) {
     const file = event.target.files[0];
@@ -42,21 +123,21 @@ const CoursePostingForm = () => {
       const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = () => {
-        setImage(reader.result);
+        setcourseThumbnailImage(reader.result);
       };
     }
   }
 
-  function handlePromotionalImageUpload(event) {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => {
-        setPromotionalImage(reader.result);
-      };
-    }
-  }
+  // function handlePromotionalImageUpload(event) {
+  //   const file = event.target.files[0];
+  //   if (file) {
+  //     const reader = new FileReader();
+  //     reader.readAsDataURL(file);
+  //     reader.onload = () => {
+  //       setPromotionalImage(reader.result);
+  //     };
+  //   }
+  // }
 
   return (
     <Box mt="90px">
@@ -102,9 +183,12 @@ const CoursePostingForm = () => {
               </Radio>
 
               <Button
+                type='submit'
+                as={'as'}
                 colorScheme='blue'
                 size='md'
                 sx={{ borderRadius: "8px", fontWeight: "bold" }}
+                onSubmit={(e) => handleSubmit(e)}
               >
                 Publish Course
               </Button>
@@ -120,17 +204,18 @@ const CoursePostingForm = () => {
           orientation='vertical'
         />
         <Box p='6'>
+          <h2 className="font-bold text-2xl">Course Landing Page</h2>
           <p>
             Your course landing page is the page first seen by a user or an
             intending learner when the click your course. Make sure it is
             compelling enough to drive learners to enroll in your course.
           </p>
           <form onSubmit={handleSubmit}>
-            <FormControl id='title' mb='4'>
+            <FormControl id='title' mb='4' mt='3'>
               <FormLabel>Course Title</FormLabel>
               <Input
                 type='text'
-                placeholder='Introduction to web Design'
+                placeholder='e.g Introduction to web Design'
                 value={title}
                 onChange={(event) => setTitle(event.target.value)}
               />
@@ -138,14 +223,14 @@ const CoursePostingForm = () => {
 
             <FormControl id='author' mb='4'>
               <FormLabel>Course Description</FormLabel>
-              <Input
+              <Textarea
                 type='text'
-                placeholder='Enter the course author'
-                value={author}
-                onChange={(event) => setAuthor(event.target.value)}
-              />
+                placeholder='e.g Introduction to web Design'
+                value={description}
+                onChange={(event) => setDescription(event.target.value)}
+               />
             </FormControl>
-            <FormControl></FormControl>
+            <FormLabel>Basic Info</FormLabel>
             <FormControl id='basicInfo' mb='4'>
               <Flex justifyContent='space-between' width='100%'>
                 <Select
@@ -154,10 +239,10 @@ const CoursePostingForm = () => {
                   onChange={(event) => setCategory1(event.target.value)}
                   marginRight='2'
                 >
-                  <option value='programming'>Programming</option>
-                  <option value='design'>Design</option>
-                  <option value='business'>Business</option>
-                  <option value='marketing'>Marketing</option>
+                  <option value='beginner'>Beginner</option>
+                  <option value='intermediate'>Intermediate</option>
+                  <option value='advance'>Advance</option>
+                 
                 </Select>
                 <Select
                   placeholder='Select Category'
@@ -203,7 +288,8 @@ const CoursePostingForm = () => {
                 type='file'
                 id='file-input'
                 accept='image/*'
-                display='none'
+                style={{ display: 'none' }}
+                // value={courseThumbnailImage}
                 onChange={handleImageUpload}
               />
               <FormControl>
@@ -277,6 +363,7 @@ const CoursePostingForm = () => {
                 Previous
               </Button>
               <Button
+              type='submit'
                 w='15%'
                 colorScheme='blue'
                 _hover={{ bg: "white", color: "blue" }}

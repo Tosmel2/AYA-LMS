@@ -146,6 +146,7 @@ const Navbar = () => {
         <form className='w-full flex flex-row items-center lg:justify-center px-0 gap-0'>
           <input
             type='text'
+            // ype="text" value={searchQuery} onChange={e => setSearchQuery(e.target.value)}
             placeholder='Find a course'
             className='border border-r-0 rounded-sm rounded-r-none p-2 text-gray-600 lg:max-w-[19rem] w-full lg:w-80 mx-0'
           />
