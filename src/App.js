@@ -55,7 +55,8 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/meta_auth/login' element={<MetamaskReg />} />
           <Route path='/adminLog' element={<AdminLogin />} />
-          <Route path='/home' element={<Homepage />} />
+          <Route path='https://ayapod5-lms.vercel.app/home' element={<Homepage />} />
+          {/* <Route path='/home' element={<Homepage />} /> */}
           <Route path='*' element={<h2 style={{fontSize:'2rem', textAlign:'center'}}>404, page not found</h2>} />
         </Routes>
       </BrowserRouter>
