@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.4d6dea26.css",
-    "main.js": "/static/js/main.10c2ff11.js",
+    "main.css": "/static/css/main.b0d2ea5a.css",
+    "main.js": "/static/js/main.04520494.js",
     "static/media/instructor-hero.png": "/static/media/instructor-hero.d6ab66094d38bfdb2a3c.png",
     "static/media/coin.png": "/static/media/coin.af879ba16e012882d500.png",
     "static/media/herobg.png": "/static/media/herobg.3aa80be9d3aaa13eaaf5.png",
@@ -20,11 +20,11 @@
     "static/media/nft1.png": "/static/media/nft1.b977c49f5f576e2cfb06.png",
     "static/media/alchemy.png": "/static/media/alchemy.29df23f405544a4b8106.png",
     "index.html": "/index.html",
-    "main.4d6dea26.css.map": "/static/css/main.4d6dea26.css.map",
-    "main.10c2ff11.js.map": "/static/js/main.10c2ff11.js.map"
+    "main.b0d2ea5a.css.map": "/static/css/main.b0d2ea5a.css.map",
+    "main.04520494.js.map": "/static/js/main.04520494.js.map"
   },
   "entrypoints": [
-    "static/css/main.4d6dea26.css",
-    "static/js/main.10c2ff11.js"
+    "static/css/main.b0d2ea5a.css",
+    "static/js/main.04520494.js"
   ]
 }
