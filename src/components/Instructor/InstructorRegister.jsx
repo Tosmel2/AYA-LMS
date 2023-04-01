@@ -65,7 +65,7 @@ export default function Register() {
                 text: res.data.message
             });
         }else{
-          localStorage.setItem('user', JSON.stringify(user));
+          // localStorage.setItem('user', JSON.stringify(user));
             Swal.fire({
                 icon: 'success',
                 title: 'Success',

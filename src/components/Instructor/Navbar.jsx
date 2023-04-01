@@ -19,7 +19,7 @@ import Logo from "../../assets/lms_logo.png";
 
 
 const Navbar = () => {
-  const user = JSON.parse(localStorage.getItem('user'))
+  // const user = JSON.parse(localStorage.getItem('user'))
   const [showNav, setShowNav] = useState(false);
   const navigate = useNavigate();
   return (
@@ -142,7 +142,7 @@ const Navbar = () => {
               <Person className='text-white' sx={{ fontSize: "2.2rem" }} />
             </div>
             <span className='font-medium text-gray-600 whitespace-nowrap'>
-            {user.firstname} {user.lastname} <Icon
+            Adewale Tosmel <Icon
                       as={ChevronDownIcon}
                       transition={"all .25s ease-in-out"}
                       w={6}

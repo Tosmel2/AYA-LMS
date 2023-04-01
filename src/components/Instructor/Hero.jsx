@@ -11,7 +11,7 @@ import {
 import instructorhero from '../../assets/instructor-hero.png'
 
 const Hero = ({href}) => {
-  const user = JSON.parse(localStorage.getItem('user'))
+  // const user = JSON.parse(localStorage.getItem('user'))
   return (
     <>
     <Flex
@@ -27,7 +27,7 @@ const Hero = ({href}) => {
         <div class="text-gray-600 body-font">
           <div class="container px-5 py-4 mx-auto">
             <div class="flex flex-col text-center w-full mb-4">
-              <h1 class=" text-4xl font-bold mb-2 text-gray-100">Welcome, {user.firstname} {user.lastname}</h1>
+              <h1 class=" text-4xl font-bold mb-2 text-gray-100">Welcome, Adewale</h1>
               <p class="lg:w-2/3 mx-auto leading-relaxed text-xl text-gray-100">Instructor Data at a glance</p>
             </div>
               <div class="flex flex-wrap -m-4 text-center p-6">
