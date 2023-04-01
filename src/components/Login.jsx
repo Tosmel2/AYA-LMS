@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react';
 import { NavLink } from "react-router-dom"
 
-import { useNavigate } from "react-router"
+// import { useNavigate } from "react-router"
 import axios from "axios"
 import Swal from "sweetalert2"
 
@@ -37,7 +37,7 @@ const Login = () => {
       }
     })
   }
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const url = `https://ayapod5-be.onrender.com/api/v1/user/login`
   // const url = `http://localhost:5000/api/v1/user/login`
 
@@ -63,7 +63,7 @@ const Login = () => {
                 timer: 1500
             });
               setTimeout(() => {
-                  navigate("/home");
+                  window.location.assign("/home");
               }, 1500)
         }
     }).catch(error => {
