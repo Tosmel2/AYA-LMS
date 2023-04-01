@@ -39,7 +39,7 @@ const Login = () => {
     })
   }
   const navigate = useNavigate()
-  const url = `http://localhost:5000/api/v1/user/instructor/login`
+  const url = `https://ayapod5-be.onrender.com/api/v1/user/instructor/login`
 
 
   const handleSubmit = (e) => {
@@ -64,7 +64,7 @@ const Login = () => {
                 timer: 1500
             });
               setTimeout(() => {
-                  navigate("/home");
+                  navigate("/instructor/dashboard");
               }, 1500)
         }
     }).catch(error => {

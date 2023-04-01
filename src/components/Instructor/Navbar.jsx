@@ -19,6 +19,7 @@ import Logo from "../../assets/lms_logo.png";
 
 
 const Navbar = () => {
+  const user = JSON.parse(localStorage.getItem('user'))
   const [showNav, setShowNav] = useState(false);
   const navigate = useNavigate();
   return (
@@ -60,7 +61,7 @@ const Navbar = () => {
         <img
           src={Logo}
           alt='Logo'
-          className='w-12 h-12 cursor-pointer'
+          className='w-12 h-10 cursor-pointer'
           onClick={() => {
             setShowNav(false);
             navigate("/");
@@ -74,7 +75,7 @@ const Navbar = () => {
           showNav ? "!flex" : "hidden"
         }`}
       >
-        <ul className='flex flex-col lg:flex-row gap-x-5 space-y-5 lg:space-y-0' style={{border:'2px solid red'}}>
+        <ul className='flex flex-col lg:flex-row gap-x-5 space-y-5 lg:space-y-0'>
           <li onClick={() => setShowNav(false)}>
             <Box className='capitalize font-semibold text-gray-700 no-underline whitespace-nowrap'>
               
@@ -141,7 +142,7 @@ const Navbar = () => {
               <Person className='text-white' sx={{ fontSize: "2.2rem" }} />
             </div>
             <span className='font-medium text-gray-600 whitespace-nowrap'>
-              John Doe <Icon
+            {user.firstname} {user.lastname} <Icon
                       as={ChevronDownIcon}
                       transition={"all .25s ease-in-out"}
                       w={6}

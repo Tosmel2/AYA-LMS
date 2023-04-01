@@ -48,7 +48,7 @@ export default function Register() {
 
   const navigate = useNavigate()
 
-  const url = `http://localhost:5000/api/v1/user/register`
+  const url = `https://ayapod5-be.onrender.com/api/v1/user/register`
   // const url = `https://aya-project-prod.vercel.app/api/v1/users/register`
 
   const handleSubmit = (e) => {

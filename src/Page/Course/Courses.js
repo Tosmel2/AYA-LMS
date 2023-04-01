@@ -23,6 +23,7 @@ import Swal from "sweetalert2";
 import {useNavigate} from "react-router"
 
 const CoursePostingForm = () => {
+  const user = JSON.parse(localStorage.getItem('user')) 
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [status, setStatus] = useState(true)
@@ -78,7 +79,7 @@ const CoursePostingForm = () => {
 
     const courseData = {
       title: title,
-      instructor: 'tosmel',
+      instructor: `${user.firstname} ${user.lastname}`,
       courseThumbnailImage: courseThumbnailImage,
       category1: category1,
       category2: category2,
