@@ -15,6 +15,8 @@ import LandingPage from "./components/LandingPage";
 import InstructorRegister from "./components/Instructor/InstructorRegister";
 import InstructorLogin from "./components/Instructor/InstructorLogin";
 import InstructorDashboard from "./components/Instructor/InstructorDashboard";
+import MyCourses from "./components/MyCourses/MyCourses";
+import ViewCourse from "./components/MyCourses/ViewCourse";
 import ResetPassword from "./components/ChangePassword/ResetPassword";
 import ForgetPassword from "./components/ChangePassword/ForgotPassword";
 // import MetamaskReg from "./components/MetamaskReg";
@@ -53,6 +55,8 @@ function App() {
           <Route exact path='/reset-password' element={<ResetPassword />} />
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/courses/mycourse' element={<MyCourses />} />
+          <Route path='/viewcourse' element={<ViewCourse />} />
           {/* <Route path='/meta_auth/login' element={<MetamaskReg />} /> */}
           <Route path='/adminLog' element={<AdminLogin />} />
           <Route path='/home' element={<Homepage />} />
