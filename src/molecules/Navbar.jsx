@@ -206,7 +206,7 @@ const Navbar = () => {
           </li>
           <li onClick={() => setShowNav(false)}>
             <Link
-              to='/course'
+              to='/courses/mycourse'
               className='capitalize font-semibold text-gray-700 no-underline cursor-pointer whitespace-nowrap'
             >
               My Courses

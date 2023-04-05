@@ -47,12 +47,12 @@ const Login = () => {
 
     axios.post(url, user)
     .then((res) => {
-        if(res.data.status === "error"){
+        if(res.data.status !== "success"){
             setStatus(true)
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: res.data.message
+                text: res.data.message || 'Invalid email or password.'
             });
         }else{
             Swal.fire({
@@ -69,6 +69,11 @@ const Login = () => {
     }).catch(error => {
         console.log(error.message) 
         setStatus(true)
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Invalid email or password.'
+      });
     })
 }
   return (

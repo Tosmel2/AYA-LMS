@@ -25,6 +25,7 @@ import lms_logo from '../assets/lms_logo.png';
 // import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 
 export default function Register() {
+  const [error, setError] = useState({ email: false, message: '' });
   const [status, setStatus] = useState(true)
   const[user, setUser] = useState({
       firstname: "",
@@ -55,17 +56,23 @@ export default function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setStatus(false)
-
+    
     axios.post(url, user)
     .then((res) => {
         if(res.data.status === "error"){
             setStatus(true)
+            if (res.data.message.includes('email')) {
+              setError({ email: true, message: 'Email already exists.' });
+            } else {
+              setError({ email: false, message: '' });
+            }
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
                 text: res.data.message
             });
         }else{
+          setError({ email: false, message: '' });
             Swal.fire({
                 icon: 'success',
                 title: 'Success',
@@ -144,6 +151,7 @@ export default function Register() {
 
                {/* <label for="email">Email</label> */}
                <input type="email" name="email" id="email" value={user["email"]} onChange={(e) => setUser({...user, email: e.target.value})} disabled={!status ? true : false} className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block  p-4 my-2" placeholder="name@company.com" required/>
+               {error.name && <small style={{color:'red'}}>Email Already exist</small>}
 
                {/* <label id="pass">Password</label> */}
       

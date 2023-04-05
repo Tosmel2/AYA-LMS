@@ -33,7 +33,7 @@ const Footer = () => {
     },
   ];
   return (
-    <div className='w-full flex flex-col md:flex-row px-4 md:px-10 py-10 lg:px-20 gap-x-10 gap-y-5 md:space-x-6'>
+    <div className='w-full flex flex-col md:flex-row px-4 md:px-10 py-10 lg:px-20 gap-x-10 gap-y-5 md:space-x-6 bg-slate-50'>
       <div className='flex flex-col space-y-4'>
         <span className='uppercase text-blue-500 text-left whitespace-nowrap'>
           <Link
