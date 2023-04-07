@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ChevronDownIcon, SearchIcon } from "@chakra-ui/icons";
+import { ChevronDownIcon} from "@chakra-ui/icons";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import {
   Box,
@@ -7,7 +7,8 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-  // useColorModeValue,
+  useColorModeValue,
+  Button,
   // Flex,
   // HStack,
   // VStack,
@@ -33,6 +34,7 @@ import {
   ShoppingCartOutlined,
 } from "@mui/icons-material";
 import Logo from "../../assets/lms_logo.png";
+// import SearchResult from "./Page/Course/SearchResult";
 
 const navitems = [
   {
@@ -96,9 +98,42 @@ const navitems = [
 ];
 
 const Navbar = () => {
+  const firstname = sessionStorage.getItem('firstname');
+  const lastname = sessionStorage.getItem('lastname');
   // const user = JSON.parse(sessionStorage.getItem('user')) 
   const [showNav, setShowNav] = useState(false);
   const navigate = useNavigate();
+
+
+  // const url = `http://localhost:5000/api/v1/courses`;
+
+  // const [searchQuery, setSearchQuery] = useState('');
+  // const [courses, setCourses] = useState([]);
+
+  // const handleSearch = () => {
+  //   navigate("/search-results");
+  //   const searchUrl = `${url}/search?q=${encodeURIComponent(searchQuery)}`;
+  //   fetch(searchUrl)
+  //     .then(response => response.json())
+  //     .then(data => setCourses(data.results))
+  //     .catch(error => console.log(error));
+  // };
+
+  // const url = `http://localhost:5000/api/v1/courses/search`;
+
+  // const SearchResult = () => {
+  //   const [searchQuery, setSearchQuery] = useState('');
+  //   const [courses, setCourses] = useState([]);
+  
+  //   const handleSearch = () => {
+  //     const searchUrl = `${url}/search?q=${encodeURIComponent(searchQuery)}`;
+  //     fetch(searchUrl)
+  //       .then(response => response.json())
+  //        .then(data => setCourses(data.results))
+  //       .catch(error => console.log(error));
+  //   };
+
+    
   return (
     <div
       className='w-full fixed top-0 z-20 bg-white min-h-[2rem] flex flex-col lg:flex-row justify-between px-4 py-4 gap-x-20 ease-in duration-500 border'
@@ -145,15 +180,30 @@ const Navbar = () => {
           }}
         />
         <form className='w-full flex flex-row items-center lg:justify-center px-0 gap-0'>
-          <input
+        <Button
+            as={'a'}
+            display={{ base: 'none', md: 'inline-flex' }}
+            fontSize={'md'}
+            fontWeight={500}
+            color={'white'}
+            bg={useColorModeValue('#197DDA', '#FAD744')}
+            href={'/search-results'}
+            _hover={{
+              bg: 'blue.400',
+            }}>
+            Find a course
+          </Button>
+          {/* <input
             type='text'
             placeholder='Find a course'
             className='border border-r-0 rounded-sm rounded-r-none p-2 text-gray-600 lg:max-w-[19rem] w-full lg:w-80 mx-0'
+            // value={searchQuery}
+            // onChange={(e) => setSearchQuery(e.target.value)}
           />
 
           <button className='bg-blue-500 w-fit h-fit p-[.57rem] rounded-l-none rounded-sm my-1'>
-            <SearchIcon />
-          </button>
+            <SearchIcon onClick={handleSearch}/>
+          </button> */}
         </form>
       </div>
 
@@ -304,14 +354,15 @@ const Navbar = () => {
               <Person className='text-white' sx={{ fontSize: "2.2rem" }} />
             </div>
             <span className='font-medium text-gray-600 whitespace-nowrap'>
-            <NavLink to="/profile">John Doe</NavLink>
-            {/* <NavLink to="/profile">{user.firstname} {user.lastname}</NavLink> */}
+            {/* <NavLink to="/profile">John Doe</NavLink> */}
+            <NavLink to="/profile">{firstname} {lastname}</NavLink>
             </span>
           </div>
         </div>
       </div>
     </div>
   );
+      // };
 };
 
 export default Navbar;

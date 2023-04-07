@@ -4,7 +4,7 @@ import { ChakraProvider, theme } from "@chakra-ui/react";
 import Homepage from "./components/Homepage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CoursePostingForm from "./Page/Course/Courses";
-// import SearchResult from "./Page/Course/SearchResult";
+import SearchResult from "./Page/Course/SearchResult";
 import Profile from "./components/Profile/Profile";
 import AdminLogin from "./Page/admin/adminLog";
 // import Register from "./Page/Register/register";
@@ -47,7 +47,7 @@ function App() {
           />
           {/* <Route path='/' element={<LandingPage />} /> */}
           <Route exact path='/profile' element={<Profile />} />
-          {/* <Route exact path='/search-results' element={<SearchResult />} /> */}
+          <Route exact path='/search-results' element={<SearchResult />} />
           <Route exact path='/instructor/register' element={<InstructorRegister />} />
           <Route exact path='/instructor/login' element={<InstructorLogin />} />
           <Route exact path='/instructor/dashboard' element={<InstructorDashboard />} />

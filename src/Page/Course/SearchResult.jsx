@@ -1,153 +1,98 @@
-// // import React from 'react'
-// // import Navbar from '../../molecules/Navbar'
-// // import Footer from '../../molecules/Footer'
-// // import img from '../../assets/crypto.png'
-// // import '../../styles/searchResult.css'
+import React, { useState } from 'react';
+import Navbar from '../../molecules/Navbar';
+import Footer from '../../molecules/Footer';
+import img from '../../assets/crypto.png';
+import '../../styles/searchResult.css';
+import { Icon } from "@chakra-ui/react";
+import { AiOutlineStar, AiFillStar } from "react-icons/ai";
+import { SearchIcon } from "@chakra-ui/icons";
 
+// const url = `http://localhost:5000/api/v1/courses/search`;
 
-// // const courses = [
-// //   {
-// //     id: 1,
-// //     img: img,
-// //     title: 'Getting Started with Web3 Development',
-// //     instructor: 'Sebastein arbogast',
-// //     rating: 4.6,
-// //     price: 0.062,
-// //     currency: 'ETH'
-// //   },
-// //   {
-// //     id: 2,
-// //     img: img,
-// //     title: 'Advanced Web3 Development',
-// //     instructor: 'John Doe',
-// //     rating: 4.8,
-// //     price: 0.1,
-// //     currency: 'ETH'
-// //   },
-// //   {
-// //     id: 3,
-// //     img: img,
-// //     title: 'Advanced Blockchain Technology',
-// //     instructor: 'John Doe',
-// //     rating: 5.2,
-// //     price: 0.1,
-// //     currency: 'ETH'
-// //   }
-// // ]
+const url = `https://ayapod5-be.onrender.com/api/v1/courses/search`
 
+const SearchResult = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [courses, setCourses] = useState([]);
 
-// // const SearchResult =()=>{
-// //     return(
-// //         <>
-// //         <Navbar/>
-// //             <div className='res-wrp'>
-// //                 <div className='res-box'>
-// //                     <h1 className='res-head'>3 results for "Web3 Foundations"</h1>
-// //                     <div className='result'>
-                                          
-// //                     {courses.map(course => (
-// //                     <div className='result-card' key={course.id}>
-// //                       <div className='res-open'>
-// //                         <img src={course.img} alt="" />
-// //                         <div className='res-text'>
-// //                           <h3>{course.title}</h3>
-// //                           <p>{course.instructor}</p>
-// //                           <p>{course.rating}</p>
-// //                         </div>
-// //                       </div>
-// //                       <div className='res-price'>
-// //                         <p>{course.price}</p>
-// //                         <p id='crncy'>{course.currency}</p>
-// //                       </div>
-// //                     </div>
-// //                   ))}
+  const handleSearch = () => {
+    const searchUrl = `${url}/search?q=${encodeURIComponent(searchQuery)}`;
+    fetch(searchUrl)
+      .then(response => response.json())
+       .then(data => setCourses(data.results))
+      .catch(error => console.log(error));
+  };
 
-// //                         {/* <div className='result-card'>
-// //                             <div className='res-open'>
-// //                             <img src={img} alt="" />
-// //                             <div className='res-text'>
-// //                                 <h3>Getting Started with Web3 Development</h3>
-// //                                 <p>Sebastein arbogast</p>
-// //                                 <p>4.6</p>
-// //                             </div>
-// //                             </div>
-// //                             <div className='res-price'>
-// //                                 <p>0.062</p>
-// //                                 <p id='crncy'>ETH</p>
-// //                             </div>
-// //                         </div> */}
+  return (
+    <>
+      <Navbar />
+      <div className="res-wrp" style={{ border:'2px solid red'}}>
+        <div className="res-box">
+          
+          
 
+          {/* Add search bar */}
+          <div className="search-bar ml-6">
+          <input
+            type='text'
+            placeholder='Find a course'
+            className='border border-r-0 rounded-sm rounded-r-none p-2 text-gray-600 lg:max-w-[19rem] w-full lg:w-80 mx-0'
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
 
-// //                     </div>
-// //                 </div>
-// //             </div>
-// //         <Footer/>
-// //         </>
-// //     )
-// // }
+          <button className='bg-blue-500 w-fit h-fit p-[.57rem] rounded-l-none rounded-sm my-1'>
+            <SearchIcon onClick={handleSearch}/>
+          </button>
+            {/* <input
+              type="text"
+              placeholder="Search courses..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            <button onClick={handleSearch}>Search</button> */}
 
-// // export default SearchResult
+            <h1 className="res-head">
+            {courses.length > 0
+              ? `${courses.length} results for "${searchQuery}"`
+              : 'Search for courses'}
+          </h1>
+          </div>
 
+          <div className="result">
+            {courses.map(course => (
+              <div className="result-card my-6" key={course.id}>
+                <div className="res-open">
+                  <img src={course.img || img} alt="course img" className="block object-cover object-center rounded w-full" />
+                  <div className="res-text">
+                    <h1>{course.title}</h1>
+                    <p>Instructor: {course.instructor}</p>
+                    <p className="text-md text-[#197DDA] text-xl">
+                      <Icon as={AiFillStar} />
+                      <Icon as={AiFillStar} />
+                      <Icon as={AiFillStar} />
+                      <Icon as={AiFillStar} />
+                      <Icon as={AiOutlineStar} />
+                    </p>
+                    {/* <p>{course.description}</p> */}
+                  </div>
+                </div>
+                <div className="res-price">
+                  <p>0.062</p>
+                  <p id="crncy">ETH</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
-// import React, { useState, useEffect } from 'react'
-// import Navbar from '../../molecules/Navbar'
-// import Footer from '../../molecules/Footer'
-// import img from '../../assets/crypto.png'
-// import '../../styles/searchResult.css'
+      <div style={{position:'absolute', bottom:'0', border:'2px solid red'}}>
+        <Footer />
+      </div>
+      {/* <Footer /> */}
+    </>
+  );
+};
 
-
-// // const url = `http://localhost:5000/api/v1/courses/search/:id`
-
-
-
-// const SearchResult = () => {
-//   const [searchQuery, setSearchQuery] = useState('');
-//   const [courses, setCourses] = useState([])
-
-//   const handleSearch = () => {
-//   const url = `http://localhost:5000/api/v1/courses/search?q=${encodeURIComponent(searchQuery)}`;
-//   fetch(url)
-//     .then(response => response.json())
-//     .then(data => setCourses(data))
-//     .catch(error => console.log(error))
-//   }
-
-//   // useEffect(() => {
-//   //   fetch(url)
-//   //     .then(response => response.json())
-//   //     .then(data => setCourses(data))
-//   //     .catch(error => console.log(error))
-//   // }, [])
-
-//   return (
-//     <>
-//       <Navbar />
-//       <div className='res-wrp'>
-//         <div className='res-box'>
-//           <h1 className='res-head'>{courses.length} results for "Web3 Foundations"</h1>
-//           <div className='result'>
-//             {courses.map(course => (
-//               <div className='result-card' key={course.id}>
-//                 <div className='res-open'>
-//                   <img src={course.img || img} alt="" />
-//                   <div className='res-text'>
-//                     <h3>{course.title}</h3>
-//                     <p>{course.instructor}</p>
-//                     <p>{course.rating}</p>
-//                   </div>
-//                 </div>
-//                 <div className='res-price'>
-//                   <p>{course.price}</p>
-//                   <p id='crncy'>{course.currency}</p>
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       </div>
-//       <Footer />
-//     </>
-//   )
-// }
-
-// export default SearchResult
+export default SearchResult;
