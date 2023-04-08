@@ -36,28 +36,28 @@ const Hero = ({href}) => {
               <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
                 <div class="px-4 py-6 rounded-lg bg-white h-36">
                 
-                <h2 class="text-center title-font font-medium text-4xl text-gray-900">0</h2>
+                <h2 class="text-center title-font font-medium text-4xl text-gray-900">8</h2>
                 <p class="text-gray-900 leading-relaxed">Students</p>
                 </div>
               </div>
               <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
                 <div class="px-4 py-6 rounded-lg bg-white h-36 ">
                 
-                <h2 class="text-center title-font font-medium text-4xl text-gray-900">0</h2>
+                <h2 class="text-center title-font font-medium text-4xl text-gray-900">5</h2>
                 <p class="text-gray-900 leading-relaxed">Courses</p>
               </div>
               </div>
               <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
                 <div class="px-4 py-6 rounded-lg bg-white h-36 ">
                   
-                  <h2 class="text-center title-font font-medium text-4xl text-gray-900">0</h2>
+                  <h2 class="text-center title-font font-medium text-4xl text-gray-900">7</h2>
                   <p class="text-gray-900 leading-relaxed">Certificate Awarded</p>
                 </div>
               </div>
               <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
               <div class="px-4 py-6 rounded-lg bg-white m h-36 b-8">
                 
-              <h2 class="text-center title-font font-medium text-4xl text-gray-900">0</h2>
+              <h2 class="text-center title-font font-medium text-4xl text-gray-900">9</h2>
               <p class="text-gray-900 leading-relaxed">Discussion Forum</p>
                 </div>
               </div>
