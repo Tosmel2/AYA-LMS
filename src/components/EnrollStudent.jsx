@@ -145,7 +145,7 @@ export default function Enroll() {
       >
         <Box w={['90%', '60%']}>
         <Stack align={['center', 'start']} >
-          <Heading fontSize={'3xl'} >
+          <Heading fontSize={'2xl'} >
             Register/Connect to your Metamask
           </Heading>
           <Text fontSize={'lg'} color={'gray.600'}>
