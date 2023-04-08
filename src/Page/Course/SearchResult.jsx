@@ -26,7 +26,7 @@ const SearchResult = () => {
   return (
     <>
       <Navbar />
-      <div className="res-wrp" style={{ border:'2px solid red'}}>
+      <div className="res-wrp">
         <div className="res-box">
           
           
@@ -87,10 +87,8 @@ const SearchResult = () => {
         </div>
       </div>
 
-      <div style={{position:'absolute', bottom:'0', border:'2px solid red'}}>
-        <Footer />
-      </div>
-      {/* <Footer /> */}
+      
+      <Footer />
     </>
   );
 };
