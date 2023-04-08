@@ -146,10 +146,10 @@ export default function Enroll() {
         <Box w={['90%', '60%']}>
         <Stack align={['center', 'start']} >
           <Heading fontSize={'3xl'} >
-            Register
+            Register/Connect to your Metamask
           </Heading>
           <Text fontSize={'lg'} color={'gray.600'}>
-            To enjoy all of our amazing courses ✌️
+            To enjoy all of our amazing web3 courses ✌️
           </Text>
           <form action="" method="POST" onSubmit={(e) => handleSubmit(e)} >
              {/* <label for="firstame">First Name</label> */}
