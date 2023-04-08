@@ -80,8 +80,8 @@ const navitems = [
 
 const Navbar = () => {
   // const user = JSON.parse(localStorage.getItem('user')) 
-  const firstname = sessionStorage.getItem('firstname');
-  const lastname = sessionStorage.getItem('lastname');
+  // const firstname = sessionStorage.getItem('firstname');
+  // const lastname = sessionStorage.getItem('lastname');
   const [showNav, setShowNav] = useState(false);
   const navigate = useNavigate();
   return (
@@ -253,7 +253,7 @@ const Navbar = () => {
             </span> */}
 
             <span className='font-medium text-gray-600 whitespace-nowrap'>
-            {firstname} {lastname}
+            Suleman Ismaila
             </span>
             
           </div>
