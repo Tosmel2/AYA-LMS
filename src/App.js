@@ -19,7 +19,7 @@ import MyCourses from "./components/MyCourses/MyCourses";
 import ViewCourse from "./components/MyCourses/ViewCourse";
 import ResetPassword from "./components/ChangePassword/ResetPassword";
 import ForgetPassword from "./components/ChangePassword/ForgotPassword";
-// import MetamaskReg from "./components/MetamaskReg";
+import EnrollStudent from "./components/EnrollStudent";
 
 
 function App() {
@@ -57,7 +57,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/courses/mycourse' element={<MyCourses />} />
           <Route path='/viewcourse' element={<ViewCourse />} />
-          {/* <Route path='/meta_auth/login' element={<MetamaskReg />} /> */}
+          <Route path='/meta_auth/login' element={<EnrollStudent />} />
           <Route path='/adminLog' element={<AdminLogin />} />
           <Route path='/home' element={<Homepage />} />
           {/* <Route path='/home' element={<Homepage />} /> */}
