@@ -60,6 +60,7 @@ function App() {
           <Route path='/meta_auth/login' element={<EnrollStudent />} />
           <Route path='/adminLog' element={<AdminLogin />} />
           <Route path='/home' element={<Homepage />} />
+          <Route path='/profile' element={<Profile />} />
           {/* <Route path='/home' element={<Homepage />} /> */}
           <Route path='*' element={<h2 style={{fontSize:'2rem', textAlign:'center'}}>404, page not found</h2>} />
         </Routes>

@@ -76,6 +76,9 @@ export default function Register() {
                 text: res.data.message
             });
         }else{
+          console.log(user, '')
+          // localStorage.setItem('firstname', user.firstname)
+          // localStorage.setItem('lastname', user.lastname)
           setError({ email: false, message: '' });
             Swal.fire({
                 icon: 'success',

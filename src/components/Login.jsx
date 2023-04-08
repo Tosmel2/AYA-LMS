@@ -48,6 +48,10 @@ const Login = () => {
 
     axios.post(url, user)
     .then((res) => {
+      console.log(res.data.data, 'res')
+      sessionStorage.setItem('token', res.data.data.token)
+      sessionStorage.setItem("firstname", res.data.data.firstname);
+    sessionStorage.setItem("lastname", res.data.data.lastname);
         if(res.data.status !== "success"){
             setStatus(true)
             Swal.fire({

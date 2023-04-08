@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Person } from "@mui/icons-material";
 import Navbar from "../../molecules/Navbar";
 import { Link } from "react-router-dom";
 import User from "../../assets/user2.png";
 import EditProfileForm from "./EditProfileForm";
 import ProfileForm from "./ProfileForm";
+import axios from "axios";
+
+
 
 const Profile = () => {
-  const [editProfile, setEditProfile] = useState(false);
 
+  const [editProfile, setEditProfile] = useState(false);
+ 
   const handleImage = (e) => {
     const file = e.target.files[0];
   };
