@@ -48,7 +48,7 @@ export default function Register() {
 
   const navigate = useNavigate()
 
-  const url = `https://ayapod5-be.onrender.com/api/v1/user/instructor/register`
+  const url = `https://ayaweb3-be.onrender.com/api/v1/user/instructor/register`
   // const url = `http://localhost:5000/api/v1/user/instructor/register`
 
   const handleSubmit = (e) => {
