@@ -25,6 +25,7 @@ const Hero = ({href}) => {
     <Box
     bg={useColorModeValue('#197DDA', '#197DDA')}
     w={['100%','50%']}
+    h={'100%'}
     display="flex" alignItems="center"
     >
       <Stack 

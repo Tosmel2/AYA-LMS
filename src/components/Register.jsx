@@ -55,6 +55,8 @@ export default function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    sessionStorage.setItem("firstname", user.firstname);
+    sessionStorage.setItem("lastname", user.lastname);
     setStatus(false)
     
     axios.post(url, user)

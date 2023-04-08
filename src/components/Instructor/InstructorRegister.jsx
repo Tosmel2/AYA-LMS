@@ -54,6 +54,7 @@ export default function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setStatus(false)
+    // console.log(`User registration`)
 
     axios.post(url, user)
     .then((res) => {
@@ -80,6 +81,11 @@ export default function Register() {
     }).catch(error => {
         console.log(error.message) 
         setStatus(true)
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: error.response.data.message || 'Registration Failed',
+        });
     })
 }
 
