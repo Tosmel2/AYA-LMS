@@ -80,7 +80,7 @@ const CoursePostingForm = () => {
 
     const courseData = {
       title: title,
-      instructor: `${user.firstname} ${user.lastname}`,
+      instructor: "Suleiman Ismaila ",
       courseThumbnailImage: courseThumbnailImage,
       category1: category1,
       category2: category2,
