@@ -70,7 +70,8 @@ const CoursePostingForm = () => {
 
   const navigate = useNavigate()
 
-  const url = `http://localhost:5000/api/v1/courses`
+  // const url = `http://localhost:5000/api/v1/courses`
+  const url = `https://ayaweb3-be.onrender.com/api/v1/courses`
   // const url = `https://aya-project-prod.vercel.app/api/v1/users/register`
 
   const handleSubmit = (e) => {
@@ -114,6 +115,11 @@ const CoursePostingForm = () => {
     }).catch(error => {
         console.log(error.message) 
         setStatus(true)
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: "Course title already exist"
+      });
     })
 }
 
