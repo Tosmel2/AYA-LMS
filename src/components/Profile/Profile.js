@@ -5,24 +5,14 @@ import { Link } from "react-router-dom";
 import User from "../../assets/user2.png";
 import EditProfileForm from "./EditProfileForm";
 import ProfileForm from "./ProfileForm";
+import axios from "axios";
 
-const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDJkYjM0ZTI4YTRiYzA5NmExMjA0Y2EiLCJpYXQiOjE2ODA4MTE1MDAsImV4cCI6MTY4MDgxNTEwMH0.bCglSfIkfe_aZWDt9zWR5MRuiyE064xcSLQ7xzGMxr0"
+
+
 const Profile = () => {
-  const [editProfile, setEditProfile] = useState(false);
-  const url = `https://ayapod5-be.onrender.com/api/v1/user`
- 
-  useEffect(() => {
-    fetch(url,{
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDJkYjM0ZTI4YTRiYzA5NmExMjA0Y2EiLCJpYXQiOjE2ODA4NzAxODIsImV4cCI6MTY4MDg3Mzc4Mn0.SZNUDA4aQd766Y8s8_LoJWTpS8redy9XAXpPEtJleew",
-      },
-    }).then(
-        res => console.log(res, 'res')
-    )
-})
 
+  const [editProfile, setEditProfile] = useState(false);
+ 
   const handleImage = (e) => {
     const file = e.target.files[0];
   };

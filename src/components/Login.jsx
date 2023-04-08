@@ -38,7 +38,7 @@ const Login = () => {
     })
   }
   const navigate = useNavigate()
-  const url = `https://ayapod5-be.onrender.com/api/v1/user/login`
+  const url = `https://ayaweb3-be.onrender.com/api/v1/user/login`
   // const url = `http://localhost:5000/api/v1/user/login`
 
   const handleSubmit = (e) => {
@@ -47,6 +47,10 @@ const Login = () => {
 
     axios.post(url, user)
     .then((res) => {
+      console.log(res.data.data, 'res')
+      sessionStorage.setItem('token', res.data.data.token)
+      sessionStorage.setItem("firstname", res.data.data.firstname);
+    sessionStorage.setItem("lastname", res.data.data.lastname);
         if(res.data.status !== "success"){
             setStatus(true)
             Swal.fire({

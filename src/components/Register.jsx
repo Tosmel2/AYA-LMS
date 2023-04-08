@@ -49,7 +49,7 @@ export default function Register() {
 
   const navigate = useNavigate()
 
-  const url = `https://ayapod5-be.onrender.com/api/v1/user/register`
+  const url = `https://ayaweb3-be.onrender.com/api/v1/user/register`
   // const url = `http://localhost:5000/api/v1/user/register`
   // const url = `https://aya-project-prod.vercel.app/api/v1/users/register`
 
@@ -74,6 +74,9 @@ export default function Register() {
                 text: res.data.message
             });
         }else{
+          console.log(user, '')
+          // localStorage.setItem('firstname', user.firstname)
+          // localStorage.setItem('lastname', user.lastname)
           setError({ email: false, message: '' });
             Swal.fire({
                 icon: 'success',

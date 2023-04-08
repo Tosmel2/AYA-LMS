@@ -80,6 +80,8 @@ const navitems = [
 
 const Navbar = () => {
   // const user = JSON.parse(localStorage.getItem('user')) 
+  const firstname = sessionStorage.getItem('firstname');
+  const lastname = sessionStorage.getItem('lastname');
   const [showNav, setShowNav] = useState(false);
   const navigate = useNavigate();
   return (
@@ -246,9 +248,14 @@ const Navbar = () => {
             <div className='bg-blue-500 rounded-full p-1 '>
               <Person className='text-white' sx={{ fontSize: "2.2rem" }} />
             </div>
-            <span className='font-medium text-gray-600 whitespace-nowrap'>
+            {/* <span className='font-medium text-gray-600 whitespace-nowrap'>
             John Doe
+            </span> */}
+
+            <span className='font-medium text-gray-600 whitespace-nowrap'>
+            {firstname} {lastname}
             </span>
+            
           </div>
         </div>
       </div>
