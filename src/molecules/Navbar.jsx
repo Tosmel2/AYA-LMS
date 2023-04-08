@@ -95,7 +95,7 @@ const Navbar = () => {
         } w-12 h-12 visible lg:hidden cursor-pointer'`}
         onClick={() => {
           setShowNav(false);
-          navigate("/");
+          navigate("/profile");
         }}
       />
       <div
